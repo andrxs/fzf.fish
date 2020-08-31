@@ -2,6 +2,7 @@
 if not set --query fzf_fish_custom_keybindings
     # \cf is Ctrl+f
     bind \cf '__fzf_search_current_dir'
+    bind \ct '__fzf_search_current_dir_default'
     bind \cr '__fzf_search_history'
     bind \cv '__fzf_search_shell_variables'
     # __fzf_search_git_log's keybinding has Alt as an additional modifier key to avoid conflict with
@@ -11,6 +12,7 @@ if not set --query fzf_fish_custom_keybindings
     # set up the same key bindings for insert mode if using fish_vi_key_bindings
     if [ $fish_key_bindings = 'fish_vi_key_bindings' ]
         bind --mode insert \cf '__fzf_search_current_dir'
+        bind --mode insert \ct '__fzf_search_current_dir_default'
         bind --mode insert \cr '__fzf_search_history'
         bind --mode insert \cv '__fzf_search_shell_variables'
         bind --mode insert \e\cl '__fzf_search_git_log'
